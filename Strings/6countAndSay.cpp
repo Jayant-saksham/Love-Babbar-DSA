@@ -1,16 +1,34 @@
 #include<iostream>
 using namespace std;
 string countAndSay(int n){
-    string ans="";
     if(n==1){
         return "1";
     }
-    ans+=countAndSay(n-1);
-    return ans;
+    if(n==2){
+        return "11";
+    }
+    string s="11";
+    for(int i=3;i<=n;i++){
+        string t="";
+        int count=1;
+        s+="&";
+        for(int j=1;j<s.size();j++){
+            if(s[j]!=s[j-1]){
+                t+=to_string(count);
+                t+=s[j-1];
+                count=1;
+            }
+            else{
+                count++;
+            }
+        }
+        s=t;
+    }
+    return s;
 }
 int main(){
     int n;
     cin>>n;
-
+    cout<<countAndSay(n)<<endl;
     return 0;
 }
