@@ -31,6 +31,7 @@ int last(int A[], int low, int high, int x, int n){
     }
     return -1;
 }
+
 int main(){
     int n;
     cin>>n;
@@ -42,6 +43,5 @@ int main(){
     cin>>x;
     cout<<first(A,0,n-1,x,n)<<endl;
     cout<<last(A,0,n-1,x,n)<<endl;
-
     return 0;
 }
